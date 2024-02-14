@@ -1,0 +1,258 @@
+.aero{
+     color: $white;
+     &::after{
+          background: $darkBlue;
+          background: linear-gradient(-45deg,$darkBlue,$blue);
+     }
+     .logo{
+          font-size: 36px;
+          text-shadow: 0 0 10px rgba(250,250,250,.5);
+     }
+     .main-container{
+          .inner-content{
+               width: calc(100% - 110px);
+               &.sidebar-closed{width: 100%;}
+          }
+          .rooms{
+               @include aero-bar(vertical);
+               ul {
+                    li a{color: $white;}
+                    li:not(li.pfpbox){
+                         @include aero-tile($darkBlue,$blue,16px,10px,0.5em);
+                         &:hover,&:focus{
+                              transform: scale(1.1);
+                              box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+                         }
+                    }
+               }
+          }
+          .pfpbox .status{
+               @include aero-tile(#666,$white,18px,50%,0.5em);
+               border: 2px solid $black;
+               &.active{
+                    @include aero-tile($darkGreen,$green,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+               &.away{
+                    @include aero-tile(#926c15,#ffe169,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+          }
+     }
+     .userInfoModal .userInfo{
+          @include aero-tile($darkBlue,#1567a7);
+          .pfpbox .status{
+               @include aero-tile(#666,$white,18px,50%,0.5em);
+               border: 2px solid $black;
+               &.active{
+                    @include aero-tile($darkGreen,$green,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+               &.away{
+                    @include aero-tile(#926c15,#ffe169,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+          }
+          .closeBtn{
+               @include aero-tile($darkRed,$red2,32px,50%,0.25em);
+          }
+          .title{
+               border-bottom: 2px solid #fff;
+          }
+          a{
+               @include aero-btn;
+          }
+     }
+     .contextMenu{
+          @include aero-tile(#888,$white,16px,0 10px 10px 10px,10px);
+          ul li{
+               @include aero-tile($darkBlue,$blue);
+               &:hover,&:focus{
+                    transform: scale(1.1);
+                    box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+               }
+               &.red{
+                    @include aero-tile($darkRed,#dc3545);
+               }
+          }
+     }
+     .footer, .navbar{
+          @include aero-bar;
+     }
+     .welcome a{
+          @include aero-btn
+     }
+     .navbar{
+          .app-title{
+               button{
+                    color: $white;
+                    background: none;
+                    &:hover{
+                         filter: drop-shadow(0 0 10px rgba(250,250,250,.5));
+                    }
+               }
+          }
+          .pfpbox .status{
+               @include aero-tile(#666,$white,18px,50%,0.5em);
+               border: 2px solid $black;
+               &.active{
+                    @include aero-tile($darkGreen,$green,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+               &.away{
+                    @include aero-tile(#926c15,#ffe169,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+          }
+          .authbtn{
+               @include aero-tile($darkBlue,$blue);
+               &:hover,&:focus{
+                    transform: scale(1.1);
+                    box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+               }
+          }
+          .options{
+               background: linear-gradient(#003f75,#1183e7);
+               filter: drop-shadow(0px 6px 6px $transpBlack2);
+               box-shadow: inset 0 2px rgba(250,250,250,.25), inset 0 -2px rgba(22,22,22,.25);
+               .statusBar button{
+                    @include aero-btn;
+                    border-radius: 0;
+                    &:first-child{border-radius: 10px 0 0 10px;}
+                    &:last-child{border-radius: 0 10px 10px 0;}
+               }
+               .links li a{@include aero-btn;}
+          }
+     }
+     .setting{
+          h2{
+               border-bottom: 2px solid $white;
+          }
+          .btn{
+               @include aero-btn;
+               &-red, &-green, &-gray{
+                    &:hover,&:focus{
+                         transform: scale(1.1);
+                         box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+                    }
+               }
+               &-red{@include aero-tile($darkRed,#dc3545);}
+               &-green{@include aero-tile($darkGreen,$green)}
+               &-gray{@include aero-tile(#404040,#858585)}
+          }
+          .profileSection .profile .img .status{
+               @include aero-tile(#666,$white,18px,50%,0.5em);
+               border: 2px solid $black;
+               &.active{
+                    @include aero-tile($darkGreen,$green,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+               &.away{
+                    @include aero-tile(#926c15,#ffe169,18px,50%,0.5em);
+                    border: 2px solid $black;
+               }
+          }
+          .frmGroup{
+               input:not(input[type=range]), textarea, select{
+                    @include aero-textfield;
+               }
+               input[type=range]{
+                    accent-color: $darkBlue;
+               }
+          }
+          .buttons.left{
+               @include aero-bar;
+          }
+          .linkList{
+               color: $black !important;
+               @include aero-tile($gray2,$white2);
+          }
+          .checkbox{
+               input{
+                    &:checked + div {
+                         .toggle{
+                              @include aero-tile($darkGreen,$green,16px,40px,0);
+                         }
+                    }
+               }
+               .toggle-container{
+                    .toggle-c{
+                         @include aero-tile($white,$gray4,16px,50%,0);
+                    }
+                    .toggle{
+                         @include aero-tile($black,#404040,16px,40px,0);
+                    }
+               }
+          }
+     }
+     .auth-container{
+          .msg{
+               color: $white !important;
+               &.error{@include aero-tile($darkRed,#dc3545,18px,10px,0.5em 0.75em);}
+               &.success{@include aero-tile($darkGreen,$green,18px,10px,0.5em 0.75em);}
+          }
+          .auth-form{
+               @include aero-tile(#a0a0a0, $white, 16px, 10px, 15px);
+               color: $black;
+               .header .back{
+                    @include aero-tile($darkGreen,$green,27.5px,50%,0.25em);
+                    &:hover,&:focus{filter: drop-shadow(0 0 8px $green);}
+               }
+               input{
+                    @include aero-textfield;
+               }
+               a{
+                    @include aero-link(16.5px);
+               }
+               .buttons button{
+                    @include aero-btn;
+               }
+               .oauth button{
+                    @include aero-tile($darkBlue, $blue);
+                    &:hover,&:focus{
+                         transform: scale(1.1);
+                         box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+                    }
+               }
+          }
+     }
+     .chatbox .chat-tile{
+          img{
+               box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+          }
+          .chat-content{
+               @include aero-tile($black,#666,16px,0 15px 15px,10px);
+               .downloadable{
+                    color: $white;
+                    &:hover{color: $gray;}
+               }
+          }
+          &.left{
+               .chat-content{
+                    @include aero-tile($darkGreen,$green,16px,15px 0 15px 15px,10px);
+                    .downloadable{
+                         color:$white;
+                         &:hover{color: $lightGreen;}
+                    }
+               }
+          }
+     }
+     .chat-info, .chat-form{
+          @include aero-bar;
+     }
+     .chat-form{
+          textarea{
+               @include aero-textfield;
+          }
+          button{
+               @include aero-tile($darkGreen,$green,32px,10px,0.5em);
+               &:hover,&:focus{
+                    transform: scale(1.1);
+                    box-shadow: inset 0 1px rgba(250,250,250,.25), inset 0 -1px rgba(22,22,22,.25);
+               }
+          }
+     }
+     .rules-container .rule-main{
+          border-bottom: 2px solid $white;
+     }
+}

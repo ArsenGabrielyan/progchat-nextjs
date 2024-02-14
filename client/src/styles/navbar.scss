@@ -1,0 +1,99 @@
+.navbar{
+     .logo{font-size: 36px;}
+     width: 100%;
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: fixed;
+     z-index: 9999; top: 0;
+     .app-title{
+          &,button{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+          }
+          button{
+               font-size: 40px;
+               margin-right: 10px;
+               border: none;
+               cursor: pointer;
+               transition: .3s;
+          }
+     }
+     .pfpbox{
+          position: relative;
+          .pfp{
+               cursor: pointer;
+               border-radius: 50%;
+               box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+          }
+          .status{
+               position: absolute;
+               width: 25px;
+               height: 25px;
+               bottom: 2px;
+          }
+     }
+     .authbtn{
+          position: relative;
+          cursor: pointer;
+          transition: all .3s;
+     }
+     .options{
+          width: fit-content;
+          position: absolute;
+          top: 90px;
+          right: 10px;
+          z-index: 9999;
+          padding: 15px;
+          border-radius: 10px 0 10px 10px;
+          .account-info{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               .infobox{
+                    text-align: center;
+                    h2{font-weight: 500;}
+                    p{font-style: italic;}
+               }
+               .pfpbox img{
+                    margin-right: 15px;
+                    border-radius: 50%;
+               }
+          }
+          .statusBar{
+               margin-top: 10px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               button{
+                    width: 100%;
+               }
+          }
+          .links{
+               width: 100%;
+               list-style: none;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               li{
+                    width: 100%;
+                    margin-top: 5px;
+                    a{
+                         margin-top: 5px;
+                         display: inline-block;
+                         text-decoration: none;
+                         width: 100%;
+                    }
+               }
+          }
+     }
+}
+@media screen and (max-width: 500px) {
+     .navbar{
+          .logo{font-size: 25px;}
+          .options{width: 95% !important;}
+     }
+}

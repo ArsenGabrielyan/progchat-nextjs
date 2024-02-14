@@ -1,0 +1,149 @@
+.modern.electric-lime{
+     color: $black;
+     &::after{
+          background: #8dc740;
+          background: linear-gradient(-45deg,#8dc740,$white);
+     }
+     .footer, .main-container .rooms, .navbar, .setting .buttons.left, .chat-info, .chat-form{
+          background: #354d16;
+          color: $white;
+          box-shadow: 0 0 10px #354d1680;
+     }
+     .pfpbox .status, .main-container .rooms .pfpbox .status, .setting .profileSection .profile .img .status, .userInfoModal .userInfo .pfpbox .status{
+          border-radius: 50%;
+          background: #ccc;
+          border: 2px solid #354d16;
+          &.active{
+               background: $green;
+               border: 2px solid #354d16;
+          }
+          &.away{
+               background: $yellow;
+               border: 2px solid #354d16;
+          }
+     }
+     .main-container{
+          .rooms ul li a, .rooms.settings ul li{
+               @include modern-link($white,#47671e,#64902a)
+          }
+     }
+     .contextMenu{
+          background: $gray3;
+          box-shadow: 0 0 5px 0 #354d1680;
+          ul li{
+               color: #47671e;
+               &:hover,&:focus{
+                    background: #47671e;
+                    color:$white;
+               }
+               &.red{
+                    color: $darkRed;
+                    &:hover,&:focus{
+                         background: $darkRed;
+                         color:$white;
+                    }
+               }
+          }
+     }
+     .welcome a{
+          @include modern-outline-button(#47671e,$white);
+     }
+     .authbtn{
+          @include modern-outline-button(#8dc740,$white);
+     }
+     .options{
+          background: #47671e;
+          .statusBar button{
+               @include modern-button(#72a430,$black,#64902a);
+               border-radius: 0;
+               &:first-child{border-radius: 10px 0 0 10px;}
+               &:last-child{border-radius: 0 10px 10px 0;}
+          }
+          .links li a{
+               @include modern-outline-button($white,#47671e)
+          }
+     }
+     .setting{
+          h2{border-bottom: 2px solid $dark;}
+          .btn{
+               @include modern-outline-button(#47671e,$white);
+          }
+          .frmGroup{
+               input:not(input[type=range]), textarea, select{
+                    @include modern-textbox("electric-lime");
+               }
+               input[type=range]{
+                    accent-color: #72a430;
+               }
+          }
+          .linkList{
+               color: $black;
+               background: #e8f4d9;
+               box-shadow: 0 0 8px #354d1680;
+          }
+          .checkbox input:checked + div .toggle{
+               background: #47671e;
+          }
+     }
+     .auth-container{
+          .auth-form{
+               box-shadow: 0 2px 10px #354d1680;
+               background: #e8f4d9;
+               .header .back{
+                    @include modern-outline-button(#47671e,$white);
+                    font-size: 32px;
+                    padding: 0.125em;
+                    border-radius: 50%;
+               }
+               input{@include modern-textbox("electric-lime");}
+               a{
+                    font-size: 16.5px;
+                    color: #47671e;
+                    &:hover{color: #72a430;}
+               }
+               .buttons button{
+                    @include modern-button(#47671e,$white,#64902a);
+               }
+               .oauth button{
+                    @include modern-outline-button(#47671e,$white)
+               }
+          }
+     }
+     .chatbox .chat-tile{
+          img{
+               box-shadow: 0 0 5px 1px #354d1680;
+          }
+          &.left{
+               .chat-content{
+                    background: #47671e;
+                    .downloadable{
+                         color:$white;
+                         &:hover{color: #d2e9b3;}
+                    }
+               }
+          }
+     }
+     .chat-form{
+          textarea{@include modern-textbox("electric-lime");}
+          button{
+               background: #64902a;
+               font-size: 32px;
+               border-radius: 10px;
+               padding: 0.5em;
+               border: 0;
+               color: $white;
+               &:hover,&:focus{background: #47671e;}
+          }
+     }
+     .rules-container .rule-main{border-bottom: 2px solid $black;}
+     .userInfo{
+          background: #e8f4d9;
+          color: #47671e;
+          .title{
+               border-bottom: 2px solid #47671e;
+          }
+          a{
+               @include modern-outline-button(#47671e,$white)
+          }
+     }
+}

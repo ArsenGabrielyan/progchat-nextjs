@@ -1,0 +1,106 @@
+$bar-height: 250px;
+.outer-width{
+     width: 100%;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+     &::after{
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          z-index: -99999;
+     }
+}
+.main-container{
+     width: 100%;
+     position: relative;
+     .rooms{
+          position: fixed;
+          top: 0;
+          left: 0;
+          padding: 90px 10px 10px;
+          height: 100vh;
+          ul{
+               list-style: none;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               li:not(li.pfpbox){
+                    width: 100%;
+                    margin: 5px 0;
+                    position: relative;
+                    cursor: pointer;
+                    transition: all .3s;
+               }
+          }
+          h2{
+               font-size: 30px;
+               font-weight: 400;
+          }
+          .pfpbox{
+               position: relative;
+               img{
+                    border-radius: 50%;
+                    box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+               }
+               .status{
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    bottom: 2px;
+               }
+          }
+     }
+     .inner-content{
+          position: absolute;
+          right: 0;
+     }
+}
+.contextMenu{
+     position: absolute;
+     width: 145.5px;
+     z-index: 99999 !important;
+     ul{
+          width: 100%;
+          list-style: none;
+          li{
+               display: flex;
+               align-items: center;
+               position: relative;
+               cursor: pointer;
+               transition: all .3s;
+               svg{
+                    font-size: 21px;
+                    margin-right: 10px;
+               }
+               margin-top: 5px;
+               &:first-child{margin: 0;}
+          }
+     }
+}
+.footer{
+     padding: 10px;
+     p{font-size: 20px;}
+}
+.welcome{
+     margin-top: 80.5px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     min-height: 90vh;
+     padding: 20px;
+     text-align: center;
+     h1{font-size: 50px;}
+     p{font-size: 18.5px;}
+     a{
+          text-decoration: none;
+          margin-top: 5px;
+     }
+}

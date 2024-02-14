@@ -1,0 +1,212 @@
+.modern{
+     color: $black;
+     &::after{
+          background: $white;
+          background: linear-gradient(-45deg,#c0c0c0,$white);
+     }
+     .footer, .main-container .rooms, .navbar, .setting .buttons.left, .chat-info, .chat-form{
+          background: $dark;
+          color: $white;
+          box-shadow: 0 0 10px rgba(22,22,22,.5);
+     }
+     .pfpbox .status, .main-container .rooms .pfpbox .status, .setting .profileSection .profile .img .status, .userInfoModal .userInfo .pfpbox .status{
+          border-radius: 50%;
+          background: #ccc;
+          border: 2px solid $dark;
+          &.active{
+               background: $green;
+               border: 2px solid $dark;
+          }
+          &.away{
+               background: $yellow;
+               border: 2px solid $dark;
+          }
+     }
+     .main-container{
+          .inner-content{
+               width: calc(100% - 120px);
+               &.sidebar-closed{width: 100%;}
+          }
+          .rooms ul li a, .rooms.settings ul li{
+               @include modern-link($white,$blue,#6ec0ff)
+          }
+     }
+     .contextMenu{
+          background: $gray3;
+          box-shadow: 0 0 5px 0 rgba(22,22,22,.5);
+          padding: 0.5em 1em;
+          border-radius: 0 10px 10px 10px;
+          ul li{
+               color: $darkBlue;
+               padding: 0.5em;
+               font-size: 18px;
+               border-radius: 10px;
+               cursor: pointer;
+               &:hover,&:focus{
+                    background: $darkBlue;
+                    color:$white;
+               }
+               &.red{
+                    color: $darkRed;
+                    &:hover,&:focus{
+                         background: $darkRed;
+                         color:$white;
+                    }
+               }
+          }
+     }
+     .welcome a{
+          @include modern-outline-button($black,$white)
+     }
+     .app-title button{
+          color: $white;
+          background: none;
+     }
+     .authbtn{
+          @include modern-outline-button(#47afff,$dark);
+          font-weight: 500;
+          text-decoration: none;
+     }
+     .options{
+          background: $dark;
+          .statusBar button{
+               @include modern-button($white,$dark,#ccc);
+               border-radius: 0;
+               &:first-child{border-radius: 10px 0 0 10px;}
+               &:last-child{border-radius: 0 10px 10px 0;}
+          }
+          .links li a{
+               @include modern-outline-button($white,$dark)
+          }
+     }
+     .setting{
+          h2{border-bottom: 2px solid $dark;}
+          .btn{
+               @include modern-outline-button($dark,$white);
+               &-red{@include modern-outline-button($darkRed,$white)}
+               &-green{@include modern-button(#37884a,$white,#2c6e3b);}
+               &-gray{@include modern-button(#777,$white,#666);}
+          }
+          .frmGroup{
+               input:not(input[type=range]), textarea, select{
+                    @include modern-textbox;
+               }
+               input[type=range]{
+                    accent-color: $blue;
+               }
+          }
+          .linkList{
+               color: $black;
+               background: $white;
+               padding: 10px 15px;
+               border-radius: 10px;
+               box-shadow: 0 0 8px rgba(22,22,22,.5);
+          }
+          .checkbox{
+               input{
+                    &:checked + div {
+                         .toggle{
+                              background: $green2;
+                         }
+                    }
+               }
+               .toggle-container{
+                    .toggle-c{
+                         background: $white;
+                    }
+                    .toggle{
+                         background: $dark;
+                    }
+               }
+          }
+     }
+     .auth-container{
+          .msg{
+               font-size: 18px;
+               border-radius: 10px;
+               padding: 0.5em 0.75em;
+               color: $white !important;
+               &.error{background-color: $darkRed;}
+               &.success{background: $darkGreen;}
+          }
+          .auth-form{
+               box-shadow: 0 2px 10px rgba(22,22,22,.5);
+               padding: 15px;
+               border-radius: 10px;
+               background: $gray3;
+               .header .back{
+                    @include modern-outline-button($darkGreen,$white);
+                    font-size: 32px;
+                    padding: 0.125em;
+                    border-radius: 50%;
+               }
+               input{@include modern-textbox;}
+               a{
+                    font-size: 16.5px;
+                    color: $darkBlue;
+                    &:hover{color: $blue;}
+               }
+               .buttons button{
+                    @include modern-button($dark,$white,#4e586b);
+               }
+               .oauth button{
+                    @include modern-outline-button(#0a55a0,$white)
+               }
+          }
+     }
+     .chatbox .chat-tile{
+          img{
+               box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+          }
+          .chat-content{
+               background: $dark;
+               border-radius: 0 15px 15px 15px;
+               color: $white;
+               .downloadable{
+                    color:$white;
+                    &:hover{color: $gray;}
+               }
+          }
+          &.left{
+               .chat-content{
+                    background: $green2;
+                    border-radius: 15px 0 15px 15px;
+                    .downloadable{
+                         color:$white;
+                         &:hover{color: $lightGreen;}
+                    }
+               }
+          }
+     }
+     .chat-form{
+          textarea{@include modern-textbox;}
+          button{
+               background: $green2;
+               font-size: 32px;
+               border-radius: 10px;
+               padding: 0.5em;
+               border: 0;
+               color: $white;
+               &:hover,&:focus{background: #1f8041;}
+          }
+     }
+     .rules-container .rule-main{border-bottom: 2px solid $black;}
+     .userInfo{
+          background: $white;
+          overflow: auto;
+          padding: 10px;
+          border-radius: 10px;
+          .closeBtn{
+               @include modern-button($red2,$white,$darkRed);
+               font-size: 32px;
+               border-radius: 50%;
+               padding: 0.25em;
+          }
+          .title{
+               border-bottom: 2px solid $dark;
+          }
+          a{
+               @include modern-outline-button($dark,$white)
+          }
+     }
+}

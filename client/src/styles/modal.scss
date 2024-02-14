@@ -1,0 +1,55 @@
+.userInfoModal{
+     &,.userInfo{
+          display: flex;
+          justify-content: center;
+          align-items: center; 
+     }
+     width: 100%;
+     top: 0;
+     left: 0;
+     height: 100vh;
+     position: fixed;
+     z-index: 99999;
+     padding: 10px;
+     background: rgba(22,22,22,.6);
+     .userInfo{
+          flex-direction: column;
+          width: 100%;
+          max-width: 350px;
+          position: relative;
+          .pfpbox{
+               position: relative;
+               .pfp{
+                    cursor: pointer;
+                    border-radius: 50%;
+                    box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+               }
+               .status{
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    bottom: 2px;
+               }
+          }
+          .closeBtn{
+               position: absolute;
+               top: -8px;
+               left: -8px;
+               display: flex;
+               align-items: center;
+               cursor: pointer;
+          }
+          .title{
+               align-self: flex-start;
+               padding-bottom: 5px;
+               font-size: 16px;
+          }
+          a{
+               margin: 10px 0 0;
+          }
+          .username{
+               font-style: italic;
+               font-weight: 500;
+          }
+     }
+}

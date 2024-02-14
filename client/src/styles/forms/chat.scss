@@ -1,0 +1,105 @@
+.chatbox{
+     margin-top: 80px;
+     margin-bottom: 120px;
+     padding: 10px;
+     width: 100%;
+     min-height: min-content;
+     display: flex;
+     flex-direction: column;
+     position: relative;
+     &.preview{margin: 0;}
+     .chat-tile{
+          display: flex;
+          z-index: 99!important;
+          ul{margin-left: 20px;}
+          .chat-content{
+               width: fit-content;
+               padding: 10px;
+               margin: 5px 0;
+               word-wrap: break-word;
+               position: relative;
+               .name{
+                    font-style: italic;
+                    font-weight: 500;
+               }
+               img, video, audio{
+                    margin: 5px 0 0 !important;
+                    border-radius: 10px !important;
+               }
+               img, video{
+                    width: 100%;
+               }
+               .downloadable{
+                    font-size: 20px;
+               }
+          }
+          img{
+               margin-right: 10px;
+               border-radius: 50%;
+               box-shadow: 0 0 5px 1px rgba(22,22,22,.5);
+          }
+          &.left{
+               flex-direction: row-reverse;
+               img{
+                    margin-left: 10px;
+                    border-radius: 50%;
+               }
+               .chat-content{
+                    align-self: flex-end;
+               }
+          }
+          .emojiView{
+               font-size: 40px;
+               filter: drop-shadow(0 0 5px $black);
+          }
+     }
+}
+.emoji-picker{
+     position: fixed;
+     bottom: 115px;
+     padding: 10px;
+     z-index: 99999;
+}
+.chat-info, .chat-form{
+     position: fixed;
+     display: flex;
+     z-index: 999;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     min-height: 100px;
+     padding: 10px;
+}
+.chat-info{
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     font-weight: 400;
+     font-size: 30px;
+}
+.chat-form{
+     textarea, canvas{
+          margin-top: 5px;
+          resize: none;
+          flex: 1;
+          height: 85px;
+     }
+     input[type=file]{
+          appearance: none;
+          display: none;
+     }
+     button{
+          position: relative;
+          margin-top: 5px;
+          margin-left: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all .3s;
+     }
+     .btn-1{
+          margin-right: 5px;
+          margin-left: 0;
+     }
+}

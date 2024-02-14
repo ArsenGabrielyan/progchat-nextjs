@@ -1,0 +1,176 @@
+@mixin aero-bar($type: normal){
+     @if($type==vertical){
+          background: linear-gradient(to left,#636668CC 0%,#454747CC 49%,#343434CC 51%,$transpBlack1 100%);
+          box-shadow: inset 2px 0 1px $transpWhite1,inset -2px 0 1px $black2;
+     } @else {
+          background: linear-gradient(#636668CC 0%,#454747CC 49%,#343434CC 51%,$transpBlack1 100%);
+          box-shadow: inset 0 2px 1px $transpWhite1,inset 0 -2px 1px $black2;
+     }
+     box-shadow: inset 0 2px 1px $transpWhite1,inset 0 -2px 1px $black2;
+     filter: drop-shadow(0px 10px 15px $transpBlack2);
+}
+@mixin aero-btn($size: 18px, $pad: 0.5em 1em){
+     padding: $pad;font-size: $size;border-radius: 10px;
+     background: linear-gradient(hsl(204, 2%, 40%),hsl(0, 0%, 13%),hsl(0, 0%, 24%));
+     box-shadow: inset 0 2px 1px $transpWhite1, inset 0 -2px 1px $black2;
+     filter: drop-shadow(0px 10px 15px $transpBlack2);
+     color: white;font-weight: 400;border: none;
+     text-shadow: 0 -2px 1px #22222240;
+     outline: none;cursor: pointer;transition: all .3s;
+     &:hover,&:focus,&.active{
+          background: linear-gradient(hsl(210, 3%, 35%),hsl(0, 0%, 8%),hsl(0, 0%, 19%)) !important;
+          box-shadow: inset 0 1px 1px $transpWhite1, inset 0 -1px 1px $black2;
+     }
+     &:disabled{
+          user-select: none;
+          pointer-events: none;
+          opacity: .5;
+     }
+}
+@mixin aero-tile($col1,$col2,$size: 18px,$rad: 10px,$pad: 0.5em 1em){
+     padding: $pad;font-size: $size;
+     border-radius: $rad;color: $white;
+     border: none;text-decoration: none;
+     background: linear-gradient($col1,$col2);
+     z-index: 3;
+     overflow: hidden;outline: none;
+     filter: drop-shadow(0px 6px 6px $transpBlack2);
+     box-shadow: inset 0 2px rgba(250,250,250,.25), inset 0 -2px rgba(22,22,22,.25);
+     &::before{
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;top: 0;
+          width: 100%;height: 50%;
+          background: linear-gradient(rgba(250,250,250,.5),rgba(250,250,250,.04));
+          border-radius: 0 0 50% 50%;
+          z-index: -1;
+     }
+}
+@mixin aero-textfield($color: #78c4ff){
+     padding: 0.5em;font-size: 16px;
+     border-radius: 10px;width: 100%;
+     background: linear-gradient($white,#e0e0e0);
+     border: 2px solid #888;
+     outline: none;transition: .3s;
+     box-shadow: 0 0 5px rgba(22,22,22,.4);
+     &:focus{
+          border-color: $color;
+          box-shadow: 0 0 10px $color;
+     }
+}
+@mixin aero-link($size: 16px, $color: $darkBlue, $hover: $blue){
+     font-size: $size;
+     color: $color;
+     transition: .3s all;
+     &:hover,&:focus{color: $hover;}
+}
+@mixin modern-textbox($type: "light"){
+     padding: 0.5em;
+     font-size: 16px;
+     width: 100%;
+     border-radius: 10px;
+     outline: none;
+     transition: .3s;
+     @if($type=="electric-lime"){
+          &:focus{
+               border-color: #72a430;
+               box-shadow: 0 0 5px #72a430;
+          }
+     } @else {
+          @if($type=="hot-pink"){
+               &:focus{
+                    border-color: #bc0071;
+                    box-shadow: 0 0 5px #bc0071;
+               }
+          } @else{
+               @if($type=='neon-orange'){
+                    &:focus{
+                         border-color: #f2540a;
+                         box-shadow: 0 0 5px #f2540a;
+                    }
+               } @else{
+                    &:focus{
+                         border-color: $blue;
+                         box-shadow: 0 0 5px $blue;
+                    }
+               }
+          }
+     }
+     @if($type=="dark"){
+          background: $dark;
+          color: $white;
+          border: 2px solid #777;
+          &::placeholder{
+               color: #bbb;
+          }
+     } @else {
+          background: $white;
+          color: $black;
+          border: 2px solid $dark;
+     }
+     @if($type=="electric-lime"){
+          background: $white;
+          color: $black;
+          border: 2px solid #47671e;
+     }
+     @if($type=="hot-pink"){
+          background: $white;
+          color: $black;
+          border: 2px solid #750046;
+     }
+     @if($type=="neon-orange"){
+          background: $white;
+          color: $black;
+          border: 2px solid #872e06;
+     }
+}
+@mixin modern-link($col1,$col2,$col3){
+     color: $col1;
+     text-decoration: none;
+     padding: 0 0.3em 0.3em;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: linear-gradient(to right,$col1,$col1), linear-gradient(to right,$col2,$col3);
+     background-size: 100% 2px, 0 2px;
+     background-position: 100% 100%, 0 100%;
+     background-repeat: no-repeat;
+     transition: .3s;
+     &:hover, &:focus{background-size: 0 2px, 100% 2px;}
+}
+@mixin modern-outline-button($col1,$col2){
+     padding: 0.5em 1em;
+     font-size: 18px;
+     border: 2px solid $col1;
+     border-radius: 10px;
+     color: $col1;
+     transition: .3s;
+     background: none;
+     cursor: pointer;
+     &:hover{
+          color: $col2;
+          background-color: $col1;
+     }
+     &:disabled{
+          user-select: none;
+          pointer-events: none;
+          opacity: .5;
+     }
+}
+@mixin modern-button($col1,$col2,$col3){
+     padding: 0.5em 1em;
+     font-size: 18px;
+     border-radius: 10px;
+     border: none;
+     cursor: pointer;
+     background: $col1;
+     color: $col2;
+     &:hover{background: $col3;}
+     transition: .3s;
+     &:disabled{
+          user-select: none;
+          pointer-events: none;
+          opacity: .5;
+     }
+}
