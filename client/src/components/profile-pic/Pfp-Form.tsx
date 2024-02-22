@@ -28,7 +28,7 @@ export default function PfpForm({currData}: PfpFormProps){
                }
           }
      }
-     return <div className="auth-container">
+     return <div className="auth-container pfp-form">
      {(msg.message && msg.type!== '') && <div className={`msg${' '+msg.type}`}>{msg.message}</div>}
           <div className="auth-form">
                <h1>Hello {currData?.name.split(' ')[0]}!</h1>

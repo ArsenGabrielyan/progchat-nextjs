@@ -16,11 +16,7 @@ const userSchema = new Schema({
           type: String,
           default: ''
      },
-     password: {
-          type: Schema.Types.Mixed,
-          required: [true, "It is Required"],
-          unique: [true, "Password Already Used. Use Another"]
-     },
+     password: Schema.Types.Mixed,
      user_id: {
           type: String,
           unique: true

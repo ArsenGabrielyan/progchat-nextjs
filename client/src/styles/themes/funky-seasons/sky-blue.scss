@@ -103,6 +103,10 @@
                     @include modern-outline-button($darkBlue,$white);
                }
           }
+          &.pfp-form{
+               background: #00aef0;
+               background: linear-gradient(-45deg,#93e0ff,$white);
+          }
      }
      .chatbox .chat-tile{
           img{

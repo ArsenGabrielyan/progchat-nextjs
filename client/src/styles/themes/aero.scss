@@ -215,6 +215,10 @@
                     }
                }
           }
+          &.pfp-form{
+               background: $darkBlue;
+               background: linear-gradient(-45deg,$darkBlue,$blue);
+          }
      }
      .chatbox .chat-tile{
           img{

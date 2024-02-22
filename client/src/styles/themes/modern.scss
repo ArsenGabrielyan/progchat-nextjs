@@ -153,6 +153,10 @@
                     @include modern-outline-button(#0a55a0,$white)
                }
           }
+          &.pfp-form{
+               background: $white;
+               background: linear-gradient(-45deg,#c0c0c0,$white);
+          }
      }
      .chatbox .chat-tile{
           img{
