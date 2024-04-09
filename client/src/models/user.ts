@@ -12,10 +12,7 @@ const userSchema = new Schema({
           required: [true, "It is Required"],
           unique: [true, "Email Already Exists"]
      },
-     image: {
-          type: String,
-          default: ''
-     },
+     image: String,
      password: Schema.Types.Mixed,
      user_id: {
           type: String,
@@ -26,10 +23,7 @@ const userSchema = new Schema({
           type: String,
           default: 'active'
      },
-     bio: {
-          type: String,
-          default: ''
-     },
+     bio: String,
      links: {
           type: [String],
           default: []
