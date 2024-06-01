@@ -9,7 +9,7 @@ interface ChatTileProps{
      children: ReactNode,
      data: IChat,
      currEmail: string,
-     onPfpClick?: (data: IChat) => void,
+     onPfpClick: (data: IChat) => void,
 }
 
 export default function ChatTile({children, data, currEmail, onPfpClick}: ChatTileProps){
@@ -20,7 +20,7 @@ export default function ChatTile({children, data, currEmail, onPfpClick}: ChatTi
      const {handleContextMenu} = useContext(ChatContext)
      return <>
      <div className={`chat-tile ${data.email===currEmail ? 'left' : ''}`} onContextMenu={handleContextMenu} id={data?.id}>
-          <Image title={data?.from} src={data?.image} alt="pfp" width={48} height={48} onClick={()=>{if(onPfpClick) onPfpClick(data)}}/>
+          <Image title={data?.from} src={data?.image} alt="pfp" width={48} height={48} onClick={()=>onPfpClick(data)}/>
           {hasOnlyEmojis ? <div className="emojiView">
                <MarkdownView>{children}</MarkdownView>
           </div> : <div className="chat-content">

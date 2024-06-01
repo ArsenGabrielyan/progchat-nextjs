@@ -14,7 +14,7 @@ export default function UserModal({data, onClose}: UserModalProps){
      <div className="userInfo">
           <button className="closeBtn" onClick={onClose}><MdClose/></button>
           {data.image && <div className="pfpbox">
-               <Image src={data.image} alt="pfp" width={64} height={64}/>
+               <Image src={data.image} alt="pfp" width={64} height={64} className="pfp"/>
                <div className={`status ${data.status}`}/>
           </div>}
           <h2>{data.name}</h2>
