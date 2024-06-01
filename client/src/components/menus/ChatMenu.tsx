@@ -15,6 +15,7 @@ export default function ChatMenu({onOpenDM}: ChatMenuProps){
           <ul>
                <li><Link href="/">Welcome!</Link></li>
                <li><Link href="/chat" onClick={()=>onOpenDM('general')}>Main Chat</Link></li>
+               <li><Link href="/chatbot">Chat Bot</Link></li>
                <li><Link href="/rules">Rules</Link></li>
           </ul>
           <h2>Users</h2>

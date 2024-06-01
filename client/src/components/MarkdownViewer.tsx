@@ -25,3 +25,4 @@ const customComponents: Partial<Components> = {
      }
 }
 export const MarkdownView = ({children}: any)=><ReactMarkdown components={customComponents} remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins}>{DOMPurify.sanitize(children)}</ReactMarkdown>
+export const MarkdownViewForChatBot = ({children}: any)=><ReactMarkdown components={customComponents}>{DOMPurify.sanitize(children)}</ReactMarkdown>

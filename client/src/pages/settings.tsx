@@ -4,7 +4,7 @@ import SettingContent from "@/components/settings/settings-content";
 import { ISettingChildren, SettingType } from "@/lib/types";
 import { GetServerSideProps } from "next";
 import { Session } from "next-auth";
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 import React, { createContext, useEffect, useState } from "react";
 
