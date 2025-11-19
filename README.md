@@ -19,4 +19,4 @@ npm run dev
 - **AI Tool For Chatbot:** Google Gemini AI
 
 > GitHub [@ArsenGabrielyan](https://github.com/ArsenGabrielyan) &nbsp;&middot;&nbsp;
-> [Arsen's Website](https://arsen-g.web.app)
+> [Arsen's Website](https://arsen-2005.vercel.app)
